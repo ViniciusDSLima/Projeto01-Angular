@@ -10,10 +10,10 @@ import { Course } from '../model/course';
   styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent {
-  courses: Observable<Course[]>;
+  courses$: Observable<Course[]>;
   displayedColumns = ['name', 'category'];
 
   constructor(private cousersService: CoursesService) {
-    this.courses = this.cousersService.list();
+    this.courses$ = this.cousersService.list();
   }
 }
